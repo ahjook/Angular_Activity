@@ -1,0 +1,69 @@
+<div class="card1" >
+  <div [hidden]="!tobeEdit">
+    <h1>Welcome to your Dashboard</h1>
+    <hr>
+    <form (ngSubmit)="onSubmit(sample)" #sample="ngForm">
+        <h3>Name:<input type="text" name="name" [(ngModel)]="Name" required #name="ngModel" placeholder="Your name...." /></h3>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)">
+            <p>Name is required!</p>
+          </div>
+        <h3>Email:</h3>
+          <input  type="email" name="email"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+        [(ngModel)]="Email" required #email="ngModel"  placeholder="Your email...."/>
+          <div *ngIf="email.invalid && !email.errors.pattern && (email.dirty || email.touched)">
+            <p>Email is required!</p>
+          </div>
+          <div *ngIf="email.errors?.pattern">
+            <p>Email is invalid!</p>
+          </div>
+                
+        <br>
+        <h3>Contact:<input type="text" name="phone" [(ngModel)]="Phone" required #phone="ngModel" placeholder="Your number...." /></h3>
+        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+            <p>Phone is required!</p>
+          </div>
+          <button class="button button2" [disabled]=!sample.form.valid>Submit</button>
+          <button class="button button2" (click)="save">Save</button>
+        </form></div>
+
+     
+            
+          <br><br>
+          <br>
+          <br>
+          <div [hidden]="tobeEdit">
+          <form (ngSubmit)="editForm.resetForm()" #editForm="ngForm">
+            <h3>Name:<input type="number" name="Editid" [(ngModel)]="id" required #Editid="ngModel" placeholder="Your name...." /></h3>
+            <div *ngIf="Editid.invalid && (Editid.dirty || Editid.touched)">
+                <p>ID is required!</p>
+              </div>
+          
+            <h3>Name:<input type="text" name="name" [(ngModel)]="EditName" required #name="ngModel" placeholder="Your name...." /></h3>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                <p>Name is required!</p>
+              </div>
+            <h3>Email:</h3>
+              <input  type="email" name="email"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+            [(ngModel)]="EditEmail" required #email="ngModel"  placeholder="Your email...."/>
+              <div *ngIf="email.invalid && !email.errors.pattern && (email.dirty || email.touched)">
+                <p>Email is required!</p>
+              </div>
+              <div *ngIf="email.errors?.pattern">
+                <p>Email is invalid!</p>
+              </div>
+                      
+    
+            <br>
+            <h3>Contact:<input type="text" name="phone" [(ngModel)]="EditPhone" required #phone="ngModel" placeholder="Your number...." /></h3>
+            <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                <p>Phone is required!</p>
+              </div>
+              <button class="button button2" (click)="toUpdate()"  [disabled]=!editForm.form.valid>Update</button>
+              <button class="button button2" (click)="save">Clear</button>
+    </form>
+  </div>
+
+<br><br>
+<app-httpchild (deleteEvent)="deleteData($event)"  (editEvent)="updateData($event); editedInfo=($event)" [dataList]="dataList"></app-httpchild>
+
+

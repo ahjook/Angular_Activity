@@ -1,0 +1,31 @@
+.card1{
+    margin-left: 450px;
+    margin-right: 450px;
+    border-radius: 5px;
+    padding: 30px;
+    margin-top: auto;
+    background-color: transparent;
+}
+input[type=text], input[type=email] ,select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.btn-danger{
+    background-color: white; 
+    color: black;
+    /* font-weight: bold; */
+    border: 2px solid ;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 140px;
+    margin:center;
+    height: 5px;
+    padding: 20px;
+    box-shadow: 0 16px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}

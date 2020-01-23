@@ -1,0 +1,41 @@
+<!-- <div class="card1">
+    <h1>Template Driven</h1>
+    <hr>
+    <form (ngSubmit)="onSubmit()" #sample="ngForm">
+        <h3>Name:<input type="text" name="name" [(ngModel)]="firstname" required #name="ngModel" /></h3>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.errors.required">Name is required</div>
+        </div>
+        <br>
+        <h3>Email:<input email="email" type="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+            [(ngModel)]="Email" required #email="ngModel" [ngModelOptions]="{standalone: true}" /></h3>
+                <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.errors.pattern">Email is invalid</div>
+        </div>
+        <br>
+        <h3>Gender:<select [(ngModel)]="gender" type="text"  [ngModelOptions]="{standalone: true}">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            </select></h3>
+            <br>
+            <button class="btn btn-danger" [disabled]=!sample.form.valid>Submit</button>
+            <br>
+            <br>
+    </form>
+</div>
+
+<div class="card1">
+<div class="output" *ngIf="output">
+    <hr>
+    <h3>You submit this following information.</h3>
+    <div>
+        <h3>Name:{{list.tname}}</h3>
+        <h3>Email:{{list.temail}}</h3>
+        <h3>Gender:{{list.tgender}}</h3>
+</div>
+<br>
+<button class="btn btn-danger" (click)="edit()">Edit</button>
+</div>
+</div>
+ -->

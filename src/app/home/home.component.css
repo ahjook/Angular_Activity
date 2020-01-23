@@ -1,0 +1,23 @@
+.button2{
+    background-color: white; 
+    margin-top: 600px;
+    margin-left: 550px;
+    
+}
+.button2 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+h1{
+    text-align: center;
+    margin-left: 40px;
+    color: aqua;
+    
+}
